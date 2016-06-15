@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "常用且实用的一些代
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aitipachong", "aitipachong\aitipachong.csproj", "{8B8A0B49-8C63-4DBB-88FF-0B98C16D86B3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "单元测试", "单元测试", "{4CF70509-0B04-4F51-8D52-A49323830826}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UT_aitipachong", "UT_aitipachong\UT_aitipachong.csproj", "{0C76046A-34B1-4E5B-9F7F-7B89037476E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,11 +21,16 @@ Global
 		{8B8A0B49-8C63-4DBB-88FF-0B98C16D86B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B8A0B49-8C63-4DBB-88FF-0B98C16D86B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B8A0B49-8C63-4DBB-88FF-0B98C16D86B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C76046A-34B1-4E5B-9F7F-7B89037476E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C76046A-34B1-4E5B-9F7F-7B89037476E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C76046A-34B1-4E5B-9F7F-7B89037476E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C76046A-34B1-4E5B-9F7F-7B89037476E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{8B8A0B49-8C63-4DBB-88FF-0B98C16D86B3} = {E88C5E07-616A-4D00-AC00-5C2191A40AE0}
+		{0C76046A-34B1-4E5B-9F7F-7B89037476E7} = {4CF70509-0B04-4F51-8D52-A49323830826}
 	EndGlobalSection
 EndGlobal
