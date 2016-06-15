@@ -68,5 +68,14 @@ namespace aitipachong {
                 return ResourceManager.GetString("CSV", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   查找类似 PersonalIDHelper 的本地化字符串。
+        /// </summary>
+        internal static string PersonalID {
+            get {
+                return ResourceManager.GetString("PersonalID", resourceCulture);
+            }
+        }
     }
 }

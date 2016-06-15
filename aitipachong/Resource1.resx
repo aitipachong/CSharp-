@@ -121,4 +121,8 @@
     <value>CsvHelper</value>
     <comment>CSV文件操作类：Csv2Datatable和DataTable2Csv等转换操作。</comment>
   </data>
+  <data name="PersonalID" xml:space="preserve">
+    <value>PersonalIDHelper</value>
+    <comment>个人身份证号码解析与生成</comment>
+  </data>
 </root>
