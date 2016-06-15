@@ -14,6 +14,7 @@
 // * 
 // ********************************************************************
 
+using System;
 using System.Data;
 using System.IO;
 
@@ -26,6 +27,7 @@ namespace aitipachong.CSV
     {
         /// <summary>
         /// 导出DataTable对象实例为CSV文件
+        ///     注：Csv文件的列头由DataTable的Column获取
         /// </summary>
         /// <param name="dt">DataTable对象实例</param>
         /// <param name="strFilePath">csv文件存储路径</param>
@@ -66,37 +68,55 @@ namespace aitipachong.CSV
             }
         }
 
-        public static DataTable Csv2Dt()
-    }
-}
-/*
         /// <summary>
         /// 将Csv读入DataTable
+        ///     注:DataTable的列头由Csv文件中获取
         /// </summary>
         /// <param name="filePath">csv文件路径</param>
         /// <param name="n">表示第n行是字段title,第n+1行是记录开始</param>
-        public static DataTable csv2dt(string filePath, int n, DataTable dt)
+        public static DataTable Csv2Dt(string filePath, int n = 1)
         {
-            StreamReader reader = new StreamReader(filePath, System.Text.Encoding.UTF8, false);
-            int i = 0, m = 0;
-            reader.Peek();
-            while (reader.Peek() > 0)
+            DataTable dt = new DataTable();
+            if (!File.Exists(filePath)) return null;
+            try
             {
-                m = m + 1;
-                string str = reader.ReadLine();
-                if (m >= n + 1)
+                StreamReader reader = new StreamReader(filePath, System.Text.Encoding.UTF8, false);
+                int i = 0, m = 0;
+                string tempStr = "";
+                reader.Peek();
+                while(reader.Peek() > 0)
                 {
-                    string[] split = str.Split(',');
-
-                    System.Data.DataRow dr = dt.NewRow();
-                    for (i = 0; i < split.Length; i++)
+                    m += 1;
+                    tempStr = reader.ReadLine();
+                    //列头
+                    if(m == n)
                     {
-                        dr[i] = split[i];
+                        string[] columnSplit = tempStr.Split(',');
+                        for(int loopi = 0; loopi < columnSplit.Length; loopi++)
+                        {
+                            dt.Columns.Add(columnSplit[loopi], Type.GetType("System.String"));
+                        }
                     }
-                    dt.Rows.Add(dr);
+
+                    //内容
+                    if(m >= n + 1)
+                    {
+                        string[] split = tempStr.Split(',');
+                        System.Data.DataRow dr = dt.NewRow();
+                        for(int loopi = 0; loopi < split.Length; loopi++)
+                        {
+                            dr[loopi] = split[loopi];
+                        }
+                        dt.Rows.Add(dr);
+                    }
                 }
+
+                return dt;
             }
-            return dt;
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
     }
-*/
+}
