@@ -54,6 +54,9 @@
   </Choose>
   <ItemGroup>
     <Compile Include="CSV\UT_CsvHelper.cs" />
+    <Compile Include="DEncrypt\UT_MySecurity.cs" />
+    <Compile Include="DEncrypt\UT_DESEncrypt.cs" />
+    <Compile Include="DEncrypt\UT_DEncrypt.cs" />
     <Compile Include="PersonalID\UT_PersonalIDHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

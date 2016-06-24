@@ -5,14 +5,14 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("aitipachong")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("aitipachong")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2016")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
+[assembly: AssemblyTitle("aitipachong")]                          //标题
+[assembly: AssemblyDescription("CSharp常用代码集锦")]             //备注
+[assembly: AssemblyConfiguration("")]                             //配置文件
+[assembly: AssemblyCompany("挨踢爬虫")]                           //企业
+[assembly: AssemblyProduct("CSharp常用代码集锦/经验集锦")]        //产品名称
+[assembly: AssemblyCopyright("Copyright © aitipachong 2016")]     //版权
+[assembly: AssemblyTrademark("挨踢爬虫|aitipachong")]             //商标
+[assembly: AssemblyCulture("")]                                   //程序集支持的区域性
 
 //将 ComVisible 设置为 false 将使此程序集中的类型
 //对 COM 组件不可见。  如果需要从 COM 访问此程序集中的类型，
