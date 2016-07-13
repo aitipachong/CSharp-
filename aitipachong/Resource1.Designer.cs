@@ -61,20 +61,101 @@ namespace aitipachong {
         }
         
         /// <summary>
-        ///   查找类似 CsvHelper 的本地化字符串。
+        ///   查找类似 BarCode名字空间 的本地化字符串。
         /// </summary>
-        internal static string CSV {
+        internal static string BarCodeToHTML {
             get {
-                return ResourceManager.GetString("CSV", resourceCulture);
+                return ResourceManager.GetString("BarCodeToHTML", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 PersonalIDHelper 的本地化字符串。
+        ///   查找类似 CSV名字空间 的本地化字符串。
         /// </summary>
-        internal static string PersonalID {
+        internal static string CsvHelper {
             get {
-                return ResourceManager.GetString("PersonalID", resourceCulture);
+                return ResourceManager.GetString("CsvHelper", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 DEncrypt名字空间 的本地化字符串。
+        /// </summary>
+        internal static string DEncrypt {
+            get {
+                return ResourceManager.GetString("DEncrypt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 DEncrypt名字空间 的本地化字符串。
+        /// </summary>
+        internal static string DESEncrypt {
+            get {
+                return ResourceManager.GetString("DESEncrypt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 DEncrypt名字空间 的本地化字符串。
+        /// </summary>
+        internal static string Encrypt {
+            get {
+                return ResourceManager.GetString("Encrypt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Encoding名字空间 的本地化字符串。
+        /// </summary>
+        internal static string FileEncoding {
+            get {
+                return ResourceManager.GetString("FileEncoding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 DEncrypt名字空间 的本地化字符串。
+        /// </summary>
+        internal static string HashEncode {
+            get {
+                return ResourceManager.GetString("HashEncode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 DEncrypt名字空间 的本地化字符串。
+        /// </summary>
+        internal static string MySecurity {
+            get {
+                return ResourceManager.GetString("MySecurity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 PersonalID名字空间 的本地化字符串。
+        /// </summary>
+        internal static string PersonalIDHelper {
+            get {
+                return ResourceManager.GetString("PersonalIDHelper", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 DEncrypt名字空间 的本地化字符串。
+        /// </summary>
+        internal static string RSACryption {
+            get {
+                return ResourceManager.GetString("RSACryption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Tools名字空间 的本地化字符串。
+        /// </summary>
+        internal static string Tools {
+            get {
+                return ResourceManager.GetString("Tools", resourceCulture);
             }
         }
     }

@@ -117,12 +117,58 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CSV" xml:space="preserve">
-    <value>CsvHelper</value>
+  <data name="CsvHelper" xml:space="preserve">
+    <value>CSV名字空间</value>
     <comment>CSV文件操作类：Csv2Datatable和DataTable2Csv等转换操作。</comment>
   </data>
-  <data name="PersonalID" xml:space="preserve">
-    <value>PersonalIDHelper</value>
+  <data name="DEncrypt" xml:space="preserve">
+    <value>DEncrypt名字空间</value>
+    <comment>对字符串或字节数组进行给定或缺省密码加密、解密。</comment>
+  </data>
+  <data name="DESEncrypt" xml:space="preserve">
+    <value>DEncrypt名字空间</value>
+    <comment>对字符串进行DES加密/解密类</comment>
+  </data>
+  <data name="Encrypt" xml:space="preserve">
+    <value>DEncrypt名字空间</value>
+    <comment>加密/解密实用类</comment>
+  </data>
+  <data name="FileEncoding" xml:space="preserve">
+    <value>Encoding名字空间</value>
+    <comment>获取文件的编码格式</comment>
+  </data>
+  <data name="HashEncode" xml:space="preserve">
+    <value>DEncrypt名字空间</value>
+    <comment>得到随机安全码（哈希加密）</comment>
+  </data>
+  <data name="MySecurity" xml:space="preserve">
+    <value>DEncrypt名字空间</value>
+    <comment>安全类：1.字符串的加密、解密；2.文件的加密、解密；3.MD5加密；4.Base64加密、解密；</comment>
+  </data>
+  <data name="PersonalIDHelper" xml:space="preserve">
+    <value>PersonalID名字空间</value>
     <comment>个人身份证号码解析与生成</comment>
+  </data>
+  <data name="RSACryption" xml:space="preserve">
+    <value>DEncrypt名字空间</value>
+    <comment>RSA加密、解密（即：公钥、私钥加解密）</comment>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>Tools名字空间</value>
+    <comment>// *        公用工具类
+// *            1.获取用户IP
+// *            2.根据配置对指定字符串进行 MD5 加密
+// *            3.得到字符串长度，一个汉字长度为2
+// *            4.截取指定长度字符串
+// *            5.获得两个日期的间隔
+// *            6.格式化日期时间
+// *            7.得到随机日期
+// *            8.HTML转换成TEXT
+// *            9.判断对象是否为空
+// *            10.验证IP地址是否合法</comment>
+  </data>
+  <data name="BarCodeToHTML" xml:space="preserve">
+    <value>BarCode名字空间</value>
+    <comment>生成条形码的HTML格式脚本</comment>
   </data>
 </root>

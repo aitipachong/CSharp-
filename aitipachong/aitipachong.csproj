@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BarCode\BarCodeToHTML.cs" />
     <Compile Include="CSV\CsvHelper.cs" />
     <Compile Include="DEncrypt\DEncrypt.cs" />
     <Compile Include="DEncrypt\DESEncrypt.cs" />

@@ -119,13 +119,3 @@ namespace aitipachong.Encoding
         }
     }
 }
-
-
-/*
-
-
-
-    }
-
-}
-*/
