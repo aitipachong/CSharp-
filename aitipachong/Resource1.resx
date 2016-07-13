@@ -155,20 +155,28 @@
   </data>
   <data name="Tools" xml:space="preserve">
     <value>Tools名字空间</value>
-    <comment>// *        公用工具类
-// *            1.获取用户IP
-// *            2.根据配置对指定字符串进行 MD5 加密
-// *            3.得到字符串长度，一个汉字长度为2
-// *            4.截取指定长度字符串
-// *            5.获得两个日期的间隔
-// *            6.格式化日期时间
-// *            7.得到随机日期
-// *            8.HTML转换成TEXT
-// *            9.判断对象是否为空
-// *            10.验证IP地址是否合法</comment>
+    <comment>公用工具类
+    1.获取用户IP
+    2.根据配置对指定字符串进行 MD5 加密
+    3.得到字符串长度，一个汉字长度为2
+    4.截取指定长度字符串
+    5.获得两个日期的间隔
+    6.格式化日期时间
+    7.得到随机日期
+    8.HTML转换成TEXT
+    9.判断对象是否为空
+    10.验证IP地址是否合法</comment>
   </data>
   <data name="BarCodeToHTML" xml:space="preserve">
     <value>BarCode名字空间</value>
     <comment>生成条形码的HTML格式脚本</comment>
+  </data>
+  <data name="ExcelHelper" xml:space="preserve">
+    <value>Excel名字空间</value>
+    <comment>Excel基本操作类，功能如下：
+    1.获取Excel链接字符串
+    2.获取Excel工作表名
+    3.Excel导入DataSet
+    4.DataSet导入Excel</comment>
   </data>
 </root>

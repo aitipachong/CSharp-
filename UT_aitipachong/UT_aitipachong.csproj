@@ -57,6 +57,7 @@
     <Compile Include="DEncrypt\UT_MySecurity.cs" />
     <Compile Include="DEncrypt\UT_DESEncrypt.cs" />
     <Compile Include="DEncrypt\UT_DEncrypt.cs" />
+    <Compile Include="Excel\UT_ExcelHelper.cs" />
     <Compile Include="PersonalID\UT_PersonalIDHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

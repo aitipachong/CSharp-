@@ -81,7 +81,7 @@ namespace aitipachong.CSV
             try
             {
                 StreamReader reader = new StreamReader(filePath, System.Text.Encoding.UTF8, false);
-                int i = 0, m = 0;
+                int m = 0;
                 string tempStr = "";
                 reader.Peek();
                 while(reader.Peek() > 0)

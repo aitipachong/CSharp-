@@ -93,7 +93,7 @@ namespace aitipachong.DEncrypt
         /// <param name="key">密钥</param>
         /// <param name="encoding">字符编码</param>
         /// <returns>明文</returns>
-        public static string Decrypt(string original, string key, Encoding encoding)
+        public static string Decrypt(string original, string key, System.Text.Encoding encoding)
         {
             byte[] buff = Convert.FromBase64String(original);
             byte[] kb = System.Text.Encoding.Default.GetBytes(key);

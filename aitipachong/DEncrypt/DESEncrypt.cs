@@ -18,6 +18,7 @@ using System.Text;
 
 namespace aitipachong.DEncrypt
 {
+    #pragma warning disable 0618
     /// <summary>
     /// 对字符串进行DES加密/解密类
     /// </summary>
@@ -40,6 +41,7 @@ namespace aitipachong.DEncrypt
             return Encrypt(text, DEFAULT_KEY);
         }
 
+        
         /// <summary>
         /// 加密
         /// </summary>
@@ -50,7 +52,7 @@ namespace aitipachong.DEncrypt
         {
             DESCryptoServiceProvider des = new DESCryptoServiceProvider();
             byte[] inputByteArray;
-            inputByteArray = Encoding.Default.GetBytes(text);
+            inputByteArray = System.Text.Encoding.Default.GetBytes(text);
             des.Key = ASCIIEncoding.ASCII.GetBytes(System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(key, "md5").Substring(0, 8));
             des.IV = ASCIIEncoding.ASCII.GetBytes(System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(key, "md5").Substring(0, 8));
             System.IO.MemoryStream ms = new System.IO.MemoryStream();
@@ -101,7 +103,7 @@ namespace aitipachong.DEncrypt
             CryptoStream cs = new CryptoStream(ms, des.CreateDecryptor(), CryptoStreamMode.Write);
             cs.Write(inputByteArray, 0, inputByteArray.Length);
             cs.FlushFinalBlock();
-            return Encoding.Default.GetString(ms.ToArray());
+            return System.Text.Encoding.Default.GetString(ms.ToArray());
         }
         #endregion
     }

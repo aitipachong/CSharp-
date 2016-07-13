@@ -51,6 +51,7 @@
     <Compile Include="DEncrypt\MySecurity.cs" />
     <Compile Include="DEncrypt\RSACryption.cs" />
     <Compile Include="Encoding\FileEncoding.cs" />
+    <Compile Include="Excel\ExcelHelper.cs" />
     <Compile Include="PersonalID\PersonalIDHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resource1.Designer.cs">

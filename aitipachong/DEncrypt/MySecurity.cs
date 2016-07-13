@@ -78,8 +78,8 @@ namespace aitipachong.DEncrypt
         {
             DESCryptoServiceProvider des = new DESCryptoServiceProvider();
             if (string.IsNullOrEmpty(keyStr)) keyStr = this.key;
-            byte[] inputByteArray = Encoding.Default.GetBytes(inputStr);
-            byte[] keyByteArray = Encoding.Default.GetBytes(keyStr);
+            byte[] inputByteArray = System.Text.Encoding.Default.GetBytes(inputStr);
+            byte[] keyByteArray = System.Text.Encoding.Default.GetBytes(keyStr);
             SHA1 ha = new SHA1Managed();
             byte[] hb = ha.ComputeHash(keyByteArray);
             sKey = new byte[8];
@@ -145,7 +145,7 @@ namespace aitipachong.DEncrypt
                 int index = (Convert.ToInt32(inputStr.Substring(i * 2, 2), 16));
                 inputByteArray[i] = (byte)index;
             }
-            byte[] keyByteArray = Encoding.Default.GetBytes(keyStr);
+            byte[] keyByteArray = System.Text.Encoding.Default.GetBytes(keyStr);
             SHA1 ha = new SHA1Managed();
             byte[] hb = ha.ComputeHash(keyByteArray);
             sKey = new byte[8];
@@ -182,7 +182,7 @@ namespace aitipachong.DEncrypt
             byte[] inputByteArray = new byte[fs.Length];
             fs.Read(inputByteArray, 0, (int)fs.Length);
             fs.Close();
-            byte[] keyByteArray = Encoding.Default.GetBytes(keyStr);
+            byte[] keyByteArray = System.Text.Encoding.Default.GetBytes(keyStr);
             SHA1 ha = new SHA1Managed();
             byte[] hb = ha.ComputeHash(keyByteArray);
             sKey = new byte[8];
@@ -226,7 +226,7 @@ namespace aitipachong.DEncrypt
             byte[] inputByteArray = new byte[fs.Length];
             fs.Read(inputByteArray, 0, (int)fs.Length);
             fs.Close();
-            byte[] keyByteArray = Encoding.Default.GetBytes(keyStr);
+            byte[] keyByteArray = System.Text.Encoding.Default.GetBytes(keyStr);
             SHA1 ha = new SHA1Managed();
             byte[] hb = ha.ComputeHash(keyByteArray);
             sKey = new byte[8];
@@ -263,7 +263,7 @@ namespace aitipachong.DEncrypt
         public static string MD5(string text)
         {
             if (Tools.Tools.IsNullOrEmpty<string>(text)) return "";
-            return MD5(Encoding.Default.GetBytes(text));
+            return MD5(System.Text.Encoding.Default.GetBytes(text));
         }
 
         /// <summary>
@@ -310,7 +310,7 @@ namespace aitipachong.DEncrypt
                                             'o','p','q','r','s','t','u','v','w','x','y','z','0','1','2','3','4','5','6','7',
                                             '8','9','+','/','='};
                 byte empty = (byte)0;
-                ArrayList byteMessage = new ArrayList(Encoding.Default.GetBytes(text));
+                ArrayList byteMessage = new ArrayList(System.Text.Encoding.Default.GetBytes(text));
                 StringBuilder outmessage;
                 int messageLen = byteMessage.Count;
                 int page = messageLen / 3;
@@ -403,7 +403,7 @@ namespace aitipachong.DEncrypt
                         outMessage.Add(outstr[2]);
                 }
                 byte[] outbyte = (byte[])outMessage.ToArray(Type.GetType("System.Byte"));
-                return Encoding.Default.GetString(outbyte);
+                return System.Text.Encoding.Default.GetString(outbyte);
             }
             catch(Exception ex)
             {

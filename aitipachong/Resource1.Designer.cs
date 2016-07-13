@@ -106,6 +106,15 @@ namespace aitipachong {
         }
         
         /// <summary>
+        ///   查找类似 Excel名字空间 的本地化字符串。
+        /// </summary>
+        internal static string ExcelHelper {
+            get {
+                return ResourceManager.GetString("ExcelHelper", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Encoding名字空间 的本地化字符串。
         /// </summary>
         internal static string FileEncoding {

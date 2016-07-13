@@ -28,6 +28,7 @@ using System.Text.RegularExpressions;
 
 namespace aitipachong.Tools
 {
+    #pragma warning disable 0618
     /// <summary>
     /// 公用工具类
     /// </summary>
