@@ -15,11 +15,7 @@
 // * 
 // ********************************************************************
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -84,7 +80,7 @@ namespace aitipachong.Excel
 
                 HttpContext.Current.Response.ClearContent();
                 string fileName = DateTime.Now.ToString("yyyyMMddHHmmsslll");
-                HttpContext.Current.Response.AddHeader("content-disposition", "attachment; filename=ExportData" + filename + ".xls");
+                HttpContext.Current.Response.AddHeader("content-disposition", "attachment; filename=ExportData" + fileName + ".xls");
                 HttpContext.Current.Response.ContentType = "application/ms-excel";
                 HttpContext.Current.Response.Charset = "GB2312";
                 HttpContext.Current.Response.ContentEncoding = System.Text.Encoding.GetEncoding("GB2312");
