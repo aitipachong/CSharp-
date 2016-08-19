@@ -61,6 +61,7 @@
     <Compile Include="Excel\ExportExcel.cs" />
     <Compile Include="Excel\GridViewExport.cs" />
     <Compile Include="File\DirFileHelper.cs" />
+    <Compile Include="File\FileOperateHelper.cs" />
     <Compile Include="PersonalID\PersonalIDHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resource1.Designer.cs">
