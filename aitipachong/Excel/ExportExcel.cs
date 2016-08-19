@@ -36,11 +36,11 @@ namespace aitipachong.Excel
         {
             if (string.IsNullOrEmpty(fileName)) throw new ArgumentNullException("Excel存储路径为空.");
             fileName = fileName + "_" + DateTime.Now.ToString("yyyyMMddHHmmsslll");
-            if(File.Exists(fileName))
+            if(System.IO.File.Exists(fileName))
             {
                 try
                 {
-                    File.Delete(fileName);
+                    System.IO.File.Delete(fileName);
                 }
                 catch
                 {

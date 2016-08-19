@@ -77,7 +77,7 @@ namespace aitipachong.CSV
         public static DataTable Csv2Dt(string filePath, int n = 1)
         {
             DataTable dt = new DataTable();
-            if (!File.Exists(filePath)) return null;
+            if (!System.IO.File.Exists(filePath)) return null;
             try
             {
                 StreamReader reader = new StreamReader(filePath, System.Text.Encoding.UTF8, false);

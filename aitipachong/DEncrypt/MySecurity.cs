@@ -178,7 +178,7 @@ namespace aitipachong.DEncrypt
         {
             DESCryptoServiceProvider des = new DESCryptoServiceProvider();
             if (string.IsNullOrEmpty(keyStr)) keyStr = this.key;
-            FileStream fs = File.OpenRead(filePath);
+            FileStream fs = System.IO.File.OpenRead(filePath);
             byte[] inputByteArray = new byte[fs.Length];
             fs.Read(inputByteArray, 0, (int)fs.Length);
             fs.Close();
@@ -197,7 +197,7 @@ namespace aitipachong.DEncrypt
             CryptoStream cs = new CryptoStream(ms, des.CreateEncryptor(), CryptoStreamMode.Write);
             cs.Write(inputByteArray, 0, inputByteArray.Length);
             cs.FlushFinalBlock();
-            fs = File.OpenWrite(savePath);
+            fs = System.IO.File.OpenWrite(savePath);
             foreach(byte b in ms.ToArray())
             {
                 fs.WriteByte(b);
@@ -222,7 +222,7 @@ namespace aitipachong.DEncrypt
             DESCryptoServiceProvider des = new DESCryptoServiceProvider();
             if (keyStr == "")
                 keyStr = key;
-            FileStream fs = File.OpenRead(filePath);
+            FileStream fs = System.IO.File.OpenRead(filePath);
             byte[] inputByteArray = new byte[fs.Length];
             fs.Read(inputByteArray, 0, (int)fs.Length);
             fs.Close();
@@ -241,7 +241,7 @@ namespace aitipachong.DEncrypt
             CryptoStream cs = new CryptoStream(ms, des.CreateDecryptor(), CryptoStreamMode.Write);
             cs.Write(inputByteArray, 0, inputByteArray.Length);
             cs.FlushFinalBlock();
-            fs = File.OpenWrite(savePath);
+            fs = System.IO.File.OpenWrite(savePath);
             foreach (byte b in ms.ToArray())
             {
                 fs.WriteByte(b);

@@ -77,7 +77,7 @@ namespace aitipachong.Excel
         public static string GetExcelConnectString(string excelPath, bool header, ExcelType eType, IMEXType imex)
         {
             if (string.IsNullOrEmpty(excelPath)) throw new ArgumentNullException("Excel路径字符串为空!");
-            if(!File.Exists(excelPath)) throw new FileNotFoundException("Excel文件不存在!");
+            if(!System.IO.File.Exists(excelPath)) throw new FileNotFoundException("Excel文件不存在!");
 
             string connectString = "";
             string hdr = "NO";
@@ -445,11 +445,11 @@ namespace aitipachong.Excel
         /// <param name="fileName"></param>
         public static void DataSetToExcel(DataTable dataTable, string fileName)
         {
-            if(File.Exists(fileName))
+            if(System.IO.File.Exists(fileName))
             {
                 try
                 {
-                    File.Delete(fileName);
+                    System.IO.File.Delete(fileName);
                 }
                 catch
                 {
