@@ -50,6 +50,7 @@
     <Compile Include="CookieSessionCache\CookieHelper.cs" />
     <Compile Include="CookieSessionCache\SessionHelper.cs" />
     <Compile Include="CSV\CsvHelper.cs" />
+    <Compile Include="Database\DbUtility.cs" />
     <Compile Include="DEncrypt\DEncrypt.cs" />
     <Compile Include="DEncrypt\DESEncrypt.cs" />
     <Compile Include="DEncrypt\Encrypt.cs" />
