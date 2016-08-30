@@ -50,6 +50,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BarCode\BarCodeToHTML.cs" />
+    <Compile Include="Conversion\ConvertHelper.cs" />
+    <Compile Include="Conversion\StringPlus.cs" />
     <Compile Include="CookieSessionCache\CacheHelper.cs" />
     <Compile Include="CookieSessionCache\CookieHelper.cs" />
     <Compile Include="CookieSessionCache\SessionHelper.cs" />
