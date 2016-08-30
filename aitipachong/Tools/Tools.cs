@@ -373,6 +373,32 @@ namespace aitipachong.Tools
         }
         #endregion
 
+        #region 验证URL
+        /// <summary>
+        /// 验证网址格式是否正确
+        /// </summary>
+        /// <param name="str_url">网址字符串</param>
+        /// <returns>方法返回布尔值</returns>
+        public static bool IsUrl(string str_url)
+        {
+            return System.Text.RegularExpressions.Regex.IsMatch(str_url,
+                    @"http(s)?://([\w-]+\.)+[\w-]+(/[\w- ./?%&=]*)?");
+        }
+        #endregion
+
+        #region 验证全字母
+        /// <summary>
+        /// 验证字符串是否为大小写字母组成
+        /// </summary>
+        /// <param name="str_Letter">字符串</param>
+        /// <returns>方法返回布尔值</returns>
+        public static bool IsLetter(string str_Letter)
+        {
+            return System.Text.RegularExpressions.Regex.
+                   IsMatch(str_Letter, @"^[A-Za-z]+$");
+        }
+        #endregion
+
         #region  验证EMail是否合法
         /// <summary>
         /// 验证EMail是否合法
@@ -442,6 +468,58 @@ namespace aitipachong.Tools
 
             //验证
             return RegexHelper.IsMatch(number, pattern);
+        }
+        #endregion
+
+        #region 验证全汉字
+        /// <summary>
+        /// 验证字符串是否为汉字
+        /// </summary>
+        /// <param name="str_chinese">字符串</param>
+        /// <returns>方法返回布尔值</returns>
+        public static bool IsChinese(string str_chinese)
+        {
+            return System.Text.RegularExpressions.Regex.
+                   IsMatch(str_chinese, @"^[\u4e00-\u9fa5],{0,}$");
+        }
+        #endregion
+
+        #region 验证手机号码
+        /// <summary>
+        /// 验证手机号是否正确
+        /// </summary>
+        /// <param name="str_handset">手机号码字符串</param>
+        /// <returns>返回布尔值</returns>
+        public static bool IsHandset(string str_handset)
+        {
+            return System.Text.RegularExpressions.Regex.
+                   IsMatch(str_handset, @"^[1]+[3,5]+\d{9}$");
+        }
+        #endregion
+
+        #region 验证电话号码
+        /// <summary>
+        /// 验证电话号码格式是否正确
+        /// </summary>
+        /// <param name="str_telephone">电话号码信息</param>
+        /// <returns>方法返回布尔值</returns>
+        public static bool IsTelephone(string str_telephone)
+        {
+            return System.Text.RegularExpressions.
+                   Regex.IsMatch(str_telephone, @"^(\d{3,4}-)?\d{6,8}$");
+        }
+        #endregion
+
+        #region 验证邮政编码
+        /// <summary>
+        /// 验证邮编格式是否正确
+        /// </summary>
+        /// <param name="str_postalcode">邮编字符串</param>
+        /// <returns>返回布尔值</returns>
+        public static bool IsPostalcode(string str_postalcode)
+        {
+            return System.Text.RegularExpressions.
+                   Regex.IsMatch(str_postalcode, @"^\d{6}$");
         }
         #endregion
 
@@ -643,10 +721,4 @@ namespace aitipachong.Tools
         }
         #endregion
     }
-    }
-
-/*
-
-    }
 }
-*/
