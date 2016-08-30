@@ -22,6 +22,7 @@
 // * 变更说明：
 // * 
 // ********************************************************************
+using aitipachong.RegularExpression;
 using System;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -372,13 +373,6 @@ namespace aitipachong.Tools
         }
         #endregion
 
-        #region 验证EMail是否合法
-
-        #endregion
-    }
-}
-
-/*
         #region  验证EMail是否合法
         /// <summary>
         /// 验证EMail是否合法
@@ -648,6 +642,11 @@ namespace aitipachong.Tools
             }
         }
         #endregion
+    }
+    }
+
+/*
+
     }
 }
 */

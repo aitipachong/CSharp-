@@ -54,6 +54,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="CSV\UT_CsvHelper.cs" />
+    <Compile Include="Database\UT_DbUtility.cs" />
     <Compile Include="DEncrypt\UT_MySecurity.cs" />
     <Compile Include="DEncrypt\UT_DESEncrypt.cs" />
     <Compile Include="DEncrypt\UT_DEncrypt.cs" />
