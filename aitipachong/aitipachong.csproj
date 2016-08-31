@@ -82,6 +82,8 @@
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
     <Compile Include="Serialize\SerializeHelper.cs" />
+    <Compile Include="StringProcess\SortHelper.cs" />
+    <Compile Include="StringProcess\StringProcessHelper.cs" />
     <Compile Include="Tools\Tools.cs" />
   </ItemGroup>
   <ItemGroup>
