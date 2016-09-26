@@ -1,6 +1,6 @@
 ﻿// ********************************************************************
 // * 项目名称：		    aitipachong
-// * 程序集名称：	    aitipachong.System
+// * 程序集名称：	    aitipachong.Sys
 // * 文件名称：		    SysHelper.cs
 // * 编写者：		    Lai.Qiang
 // * 编写日期：		    2016-09-26
@@ -17,7 +17,7 @@ using System.Diagnostics;
 using System.Threading;
 using System.Web;
 
-namespace aitipachong.System
+namespace aitipachong.Sys
 {
     /// <summary>
     /// 系统操作相关的公共类

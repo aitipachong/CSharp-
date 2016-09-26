@@ -91,7 +91,10 @@
     <Compile Include="Serialize\SerializeHelper.cs" />
     <Compile Include="StringProcess\SortHelper.cs" />
     <Compile Include="StringProcess\StringProcessHelper.cs" />
+    <Compile Include="Sys\SysHelper.cs" />
     <Compile Include="Tools\Tools.cs" />
+    <Compile Include="XML\XmlHelper.cs" />
+    <Compile Include="XML\XMLProcess.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resource1.resx">
