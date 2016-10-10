@@ -1,12 +1,23 @@
-﻿using MySql.Data.MySqlClient;
+﻿// ********************************************************************
+// * 项目名称：		    aitipachong
+// * 程序集名称：	    aitipachong.Database.DBUtility
+// * 文件名称：		    DbHelperMySQL.cs
+// * 编写者：		    Lai.Qiang
+// * 编写日期：		    2016-10-10
+// * 程序功能描述：
+// *        数据访问基础类(基于MySQL) 
+// *
+// * 程序变更日期：
+// * 程序变更者：
+// * 变更说明：
+// * 
+// ********************************************************************
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace aitipachong.Database.DBUtility
 {
