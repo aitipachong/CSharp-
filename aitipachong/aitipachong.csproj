@@ -11,6 +11,8 @@
     <AssemblyName>aitipachong</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,9 +42,13 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Activities.Presentation" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\Dll\System.Data.SQLite.dll</HintPath>
+    </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
@@ -68,8 +74,13 @@
     <Compile Include="CSV\CsvHelper.cs" />
     <Compile Include="Database\DbUtility.cs" />
     <Compile Include="Database\DBUtility\CommandInfo.cs" />
+    <Compile Include="Database\DBUtility\DataReaderHelper.cs" />
+    <Compile Include="Database\DBUtility\DataTableHelper.cs" />
+    <Compile Include="Database\DBUtility\DbHelperMySQL.cs" />
     <Compile Include="Database\DBUtility\DbHelperOleDb.cs" />
+    <Compile Include="Database\DBUtility\DbHelperOra.cs" />
     <Compile Include="Database\DBUtility\DbHelperSQL.cs" />
+    <Compile Include="Database\DBUtility\DbHelperSQLite.cs" />
     <Compile Include="Database\DBUtility\OracleHelper.cs" />
     <Compile Include="Database\MySqlHelper.cs" />
     <Compile Include="Database\SqlHelper.cs" />
@@ -116,6 +127,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="DEncrypt\常用数据加密和解密方法汇总.docx" />
     <None Include="packages.config" />
   </ItemGroup>
