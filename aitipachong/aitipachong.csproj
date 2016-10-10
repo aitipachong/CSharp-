@@ -39,7 +39,10 @@
       <HintPath>C:\Program Files (x86)\MySQL\MySQL Connector Net 6.7.4\Assemblies\v4.5\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Activities.Presentation" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
@@ -64,7 +67,12 @@
     <Compile Include="CookieSessionCache\SessionHelper.cs" />
     <Compile Include="CSV\CsvHelper.cs" />
     <Compile Include="Database\DbUtility.cs" />
+    <Compile Include="Database\DBUtility\CommandInfo.cs" />
+    <Compile Include="Database\DBUtility\DbHelperOleDb.cs" />
+    <Compile Include="Database\DBUtility\DbHelperSQL.cs" />
+    <Compile Include="Database\DBUtility\OracleHelper.cs" />
     <Compile Include="Database\MySqlHelper.cs" />
+    <Compile Include="Database\SqlHelper.cs" />
     <Compile Include="DEncrypt\DEncrypt.cs" />
     <Compile Include="DEncrypt\DESEncrypt.cs" />
     <Compile Include="DEncrypt\Encrypt.cs" />
