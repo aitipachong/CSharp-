@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -59,6 +60,7 @@
     <Compile Include="DEncrypt\UT_DESEncrypt.cs" />
     <Compile Include="DEncrypt\UT_DEncrypt.cs" />
     <Compile Include="Excel\UT_ExcelHelper.cs" />
+    <Compile Include="Office\UT_ConvertToImage.cs" />
     <Compile Include="PersonalID\UT_PersonalIDHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
