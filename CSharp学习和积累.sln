@@ -13,10 +13,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UT_aitipachong", "UT_aitipa
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DLLs", "DLLs", "{031B2433-9CDE-4EB7-BD12-716A31ACB319}"
 	ProjectSection(SolutionItems) = preProject
+		Dll\Aspose.Pdf.dll = Dll\Aspose.Pdf.dll
+		Dll\Aspose.Pdf.xml = Dll\Aspose.Pdf.xml
+		Dll\Aspose.Slides.dll = Dll\Aspose.Slides.dll
+		Dll\Aspose.Slides.xml = Dll\Aspose.Slides.xml
+		Dll\Aspose.Words.dll = Dll\Aspose.Words.dll
+		Dll\ESBasic.dll = Dll\ESBasic.dll
+		Dll\ESBasic.xml = Dll\ESBasic.xml
 		Dll\MySql.Data.dll = Dll\MySql.Data.dll
 		Dll\MySql.Data.Entity.dll = Dll\MySql.Data.Entity.dll
 		Dll\O2S.Components.PDFRender4NET.dll = Dll\O2S.Components.PDFRender4NET.dll
 		Dll\System.Data.SQLite.dll = Dll\System.Data.SQLite.dll
+		Dll\unrar.dll = Dll\unrar.dll
 	EndProjectSection
 EndProject
 Global

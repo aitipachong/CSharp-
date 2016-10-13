@@ -115,5 +115,31 @@ namespace UT_aitipachong.Office
             }
         }
 
+        [TestMethod]
+        public void UT_Rar2Image_V1()
+        {
+            string rarFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Documents", "RAR", "cppcheck.rar");
+            string imageFolderPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Documents", "RAR", "Pictures");
+
+            try
+            {
+                ConvertToImage convert = new ConvertToImage();
+                convert.Rar2Image(rarFilePath, imageFolderPath);
+
+                string[] files = Directory.GetFiles(imageFolderPath);
+                if (files == null || files.Length == 0)
+                {
+                    Assert.Fail("转换失败");
+                }
+                else
+                {
+                    Assert.AreEqual(4, files.Length);
+                }
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail(ex.Message);
+            }
+        }
     }
 }

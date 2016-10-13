@@ -26,6 +26,7 @@ using System.Windows.Forms;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 using O2S.Components.PDFRender4NET;
+using aitipachong.RAR;
 
 namespace aitipachong.Office
 {
@@ -460,6 +461,57 @@ namespace aitipachong.Office
             }
         }
 
+        #endregion
+
+        #region RAR包转换为图片
+
+        /// <summary>
+        /// 将RAR包转换为图像
+        /// </summary>
+        /// <param name="rarInputPath"></param>
+        /// <param name="imageOutputDirPath"></param>
+        public void Rar2Image(string rarInputPath, string imageOutputDirPath)
+        {
+            //参数容错
+            if (string.IsNullOrEmpty(rarInputPath)) throw new ArgumentNullException("RAR file path is empty or null.");
+            if (!System.IO.File.Exists(rarInputPath)) throw new FileNotFoundException("RAR file is not exist.");
+            if (string.IsNullOrEmpty(imageOutputDirPath)) imageOutputDirPath = Path.GetDirectoryName(rarInputPath);
+            if (!Directory.Exists(imageOutputDirPath)) Directory.CreateDirectory(imageOutputDirPath);
+
+            try
+            {
+                Unrar temp = new Unrar(rarInputPath);
+                temp.Open(Unrar.OpenMode.List);
+                string[] files = temp.ListFiles();
+                temp.Close();
+
+                int total = files.Length;
+                int done = 0;
+
+                Unrar unrar = new Unrar(rarInputPath);
+                unrar.Open(Unrar.OpenMode.Extract);
+                unrar.DestinationPath = imageOutputDirPath;
+
+                while(unrar.ReadHeader())
+                {
+                    if(unrar.CurrentFile.IsDirectory)
+                    {
+                        unrar.Skip();
+                    }
+                    else
+                    {
+                        unrar.Extract();
+                        ++done;
+                    }
+                }
+
+                unrar.Close();
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
         #endregion
     }
 }

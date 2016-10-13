@@ -33,6 +33,19 @@
   </PropertyGroup>
   <PropertyGroup />
   <ItemGroup>
+    <Reference Include="Aspose.Pdf">
+      <HintPath>..\Dll\Aspose.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Slides">
+      <HintPath>..\Dll\Aspose.Slides.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Words, Version=14.9.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dll\Aspose.Words.dll</HintPath>
+    </Reference>
+    <Reference Include="ESBasic">
+      <HintPath>..\Dll\ESBasic.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
@@ -112,10 +125,14 @@
     <Compile Include="File\FileOperateHelper.cs" />
     <Compile Include="File\INIFileHelper.cs" />
     <Compile Include="JSON\ConvertJson.cs" />
+    <Compile Include="Office\Aspose\PDFHelper.cs" />
+    <Compile Include="Office\Aspose\PowerPointHelper.cs" />
+    <Compile Include="Office\Aspose\WordHelper.cs" />
     <Compile Include="Office\ConvertToImage.cs" />
     <Compile Include="PersonalID\PersonalIDHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QRCode\QRCodeHelper.cs" />
+    <Compile Include="RAR\Unrar.cs" />
     <Compile Include="RegularExpression\RegexHelper.cs" />
     <Compile Include="Resource1.Designer.cs">
       <AutoGen>True</AutoGen>
