@@ -24,6 +24,8 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Text.RegularExpressions;
+using System.Reflection;
 
 namespace aitipachong.Office.Aspose
 {
@@ -100,6 +102,7 @@ namespace aitipachong.Office.Aspose
                 foreach (Document doc in docArrayList)
                 {
                     doc.FirstSection.PageSetup.SectionStart = SectionStart.NewPage;
+                    doc.FirstSection.PageSetup.RestartPageNumbering = true;
                     docAll.AppendDocument(doc, ImportFormatMode.KeepSourceFormatting);
                 }
                 docAll.Save(outputPath);
@@ -409,6 +412,114 @@ namespace aitipachong.Office.Aspose
         public bool ConvertWordToImage(string wordInputPath, string imageOutputDirPath)
         {
             return this.ConvertWordToImage(wordInputPath, imageOutputDirPath, 0, 0, null, 200);
+        }
+
+        #endregion
+
+        #region 文档操作
+        /// <summary>
+        /// 高亮显示内容
+        /// </summary>
+        /// <param name="wordInputPath"></param>
+        /// <param name="highlightContent"></param>
+        /// <returns></returns>
+        public bool Highlight(string wordInputPath, string highlightContent)
+        {
+            bool result = false;
+            //参数容错
+            if (string.IsNullOrEmpty(wordInputPath)) throw new ArgumentNullException("Word file path is empty or null.");
+            if (!System.IO.File.Exists(wordInputPath)) throw new FileNotFoundException("Word file is not exist.");
+            if (string.IsNullOrEmpty(highlightContent)) throw new ArgumentNullException("Highlight Content is empty or null.");
+
+            try
+            {
+                Document doc = new Document(wordInputPath);
+
+                //设置“高亮”显示的内容
+                Regex regex = new Regex(highlightContent, RegexOptions.IgnoreCase);
+                doc.Range.Replace(regex, new ReplaceEvaluationFindAndHighlight(), true);
+
+                doc.Save(wordInputPath);
+                result = true;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+
+            return result;
+        }
+
+        private class ReplaceEvaluationFindAndHighlight : IReplacingCallback
+        {
+            /// <summary>
+            /// This method is called by the Aspose.Words find and replace engine for each match.
+            /// This method highlights the match string, even if it spans multiple runs.
+            /// </summary>
+            /// <param name="args"></param>
+            /// <returns></returns>
+            public ReplaceAction Replacing(ReplacingArgs args)
+            {
+                //This is a Run node that contains either the geginning or the complete match.
+                Node currentNode = args.MatchNode;
+
+                //The first (and may be the only) run can contain text before the match,
+                //in this case it is necessary to split the run.
+                if (args.MatchOffset > 0)
+                    currentNode = SplitRun((Run)currentNode, args.MatchOffset);
+
+                //This array is used to store all nodes of the match for further highlighting.
+                ArrayList runs = new ArrayList();
+
+                //Find all runs that contain parts of the match string.
+                int remainingLength = args.Match.Value.Length;
+                while (
+                    (remainingLength > 0) &&
+                    (currentNode != null) &&
+                    (currentNode.GetText().Length <= remainingLength))
+                {
+                    runs.Add(currentNode);
+                    remainingLength = remainingLength - currentNode.GetText().Length;
+
+                    //Select the next Run node.
+                    //Have to loop because there could be other nodes such as BookmarkStart etc.
+                    do
+                    {
+                        currentNode = currentNode.NextSibling;
+                    }
+                    while ((currentNode != null) && (currentNode.NodeType != NodeType.Run));
+                }
+
+                //Split the last run that contains the match if there is any text left.
+                if((currentNode != null) && (remainingLength > 0))
+                {
+                    SplitRun((Run)currentNode, remainingLength);
+                    runs.Add(currentNode);
+                }
+
+                //Now highlight all runs in the sequence.
+                foreach (Run run in runs)
+                    run.Font.HighlightColor = Color.Yellow;
+
+                //Signal to the replace engine to do nothing because we have already done all what we wanted.
+                return ReplaceAction.Skip;
+            }
+        }
+
+        /// <summary>
+        /// Splits text of the specified run into two runs.
+        /// Inserts the new run just after the specified run.
+        /// </summary>
+        /// <param name="run"></param>
+        /// <param name="position"></param>
+        /// <returns></returns>
+        private static Run SplitRun(Run run, int position)
+        {
+            Run afterRun = (Run)run.Clone(true);
+            afterRun.Text = run.Text.Substring(position);
+            run.Text = run.Text.Substring(0, position);
+            run.ParentNode.InsertAfter(afterRun, run);
+            return afterRun;
         }
         #endregion
     }

@@ -189,5 +189,31 @@ namespace UT_aitipachong.Office.Aspose
                 Assert.Fail(ex.Message);
             }
         }
+
+        [TestMethod]
+        public void UT_Highlight_V1()
+        {
+            string wordFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Documents", "WORD", "常用规则及问题.docx");
+            string highlightContent = "注释";
+
+            try
+            {
+                WordHelper helper = new WordHelper();
+                bool result = helper.Highlight(wordFilePath, highlightContent);
+                if (result)
+                {
+                    Assert.AreEqual(true, result);
+                }
+                else
+                {
+                    Assert.Fail("图像转换为PDF失败");
+                }
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail(ex.Message);
+            }
+
+        }
     }
 }
