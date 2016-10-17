@@ -96,6 +96,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Array\ArrayOperationHelper.cs" />
     <Compile Include="BarCode\BarCodeToHTML.cs" />
     <Compile Include="Conversion\ConvertHelper.cs" />
     <Compile Include="Conversion\StringPlus.cs" />
