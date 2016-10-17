@@ -134,6 +134,7 @@
     <Compile Include="Office\Aspose\WordHelper.cs" />
     <Compile Include="Office\ConvertToImage.cs" />
     <Compile Include="PersonalID\PersonalIDHelper.cs" />
+    <Compile Include="PinYin\PinYinHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QRCode\QRCodeHelper.cs" />
     <Compile Include="RAR\Unrar.cs" />

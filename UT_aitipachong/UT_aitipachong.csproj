@@ -63,6 +63,7 @@
     <Compile Include="Office\Aspose\UT_WordHelper.cs" />
     <Compile Include="Office\UT_ConvertToImage.cs" />
     <Compile Include="PersonalID\UT_PersonalIDHelper.cs" />
+    <Compile Include="PinYin\UT_PinYinHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Zip\UT_ZipFactory.cs" />
   </ItemGroup>
