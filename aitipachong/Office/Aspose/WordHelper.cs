@@ -521,6 +521,7 @@ namespace aitipachong.Office.Aspose
             run.ParentNode.InsertAfter(afterRun, run);
             return afterRun;
         }
+
         #endregion
     }
 }
