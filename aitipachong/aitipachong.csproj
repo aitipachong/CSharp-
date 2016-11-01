@@ -150,8 +150,11 @@
     <Compile Include="Serialize\SerializeHelper.cs" />
     <Compile Include="StringProcess\SortHelper.cs" />
     <Compile Include="StringProcess\StringProcessHelper.cs" />
+    <Compile Include="Sys\NIC.cs" />
     <Compile Include="Sys\OSHelper.cs" />
+    <Compile Include="Sys\ScreenCapture.cs" />
     <Compile Include="Sys\SysHelper.cs" />
+    <Compile Include="Sys\SystemSleepManagement.cs" />
     <Compile Include="Tools\Tools.cs" />
     <Compile Include="XML\XmlHelper.cs" />
     <Compile Include="XML\XMLProcess.cs" />
