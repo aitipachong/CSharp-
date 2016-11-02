@@ -99,6 +99,21 @@ namespace aitipachong.NetWork
             if (item.IsToLower) result.Html = result.Html.ToLower();
             return result;
         }
+
+        /// <summary>
+        /// 过滤HTML标签
+        /// </summary>
+        /// <param name="strHtml">HTML内容字符串</param>
+        /// <returns>过滤HTML标签后的字符串</returns>
+        public string StripHTML(string strHtml)
+        {
+            strHtml = Regex.Replace(strHtml, "</p(?:\\s*)>(?:\\s*)<p(?:\\s*)>", "\n\n", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+            strHtml = Regex.Replace(strHtml, "", "\n", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+            strHtml = Regex.Replace(strHtml, "\"", "''", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+            strHtml = StripHtmlXmlTags(strHtml);
+            return strHtml;
+        }
+
         #endregion
 
         #region 私有函数
@@ -442,6 +457,18 @@ namespace aitipachong.NetWork
             return true;
         }
         #endregion
+
+        /// <summary>
+        /// 匹配Html或XML内容
+        /// </summary>
+        /// <param name="content"></param>
+        /// <returns></returns>
+        private string StripHtmlXmlTags(string content)
+        {
+            return Regex.Replace(content, "<[^>]+>", "", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+        }
+
+
         #endregion
     }
 
