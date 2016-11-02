@@ -66,6 +66,7 @@
     <Compile Include="PersonalID\UT_PersonalIDHelper.cs" />
     <Compile Include="PinYin\UT_PinYinHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SEO\UT_BaiduMapHelper.cs" />
     <Compile Include="Sys\UT_OSHelper.cs" />
     <Compile Include="Zip\UT_ZipFactory.cs" />
   </ItemGroup>

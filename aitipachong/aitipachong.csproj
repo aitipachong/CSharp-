@@ -149,6 +149,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
+    <Compile Include="SEO\BaiduMapHelper.cs" />
+    <Compile Include="SEO\SeoHelper.cs" />
     <Compile Include="Serialize\SerializeHelper.cs" />
     <Compile Include="StringProcess\SortHelper.cs" />
     <Compile Include="StringProcess\StringProcessHelper.cs" />

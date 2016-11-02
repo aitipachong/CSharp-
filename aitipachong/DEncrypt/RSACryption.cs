@@ -379,14 +379,3 @@ namespace aitipachong.DEncrypt
         #endregion
     }
 }
-/*
-
-
-        #endregion
-
-
-        #endregion
-
-    }
-}
-*/
