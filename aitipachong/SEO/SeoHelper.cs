@@ -14,11 +14,8 @@
 // ********************************************************************
 using aitipachong.NetWork;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace aitipachong.SEO
 {
@@ -37,7 +34,17 @@ namespace aitipachong.SEO
             try
             {
                 StringBuilder sb = new StringBuilder();
-                sb.Append("<?xml version=\"1.0\"?>");                sb.Append("<methodCall>");                sb.Append("<methodName>weblogUpdates.ping</methodName>");                sb.Append("<params>");                sb.Append("<param>");                sb.Append("<value><string>" + url + "</string></value>");                sb.Append("</param><param><value><string>" + url + "</string></value>");                sb.Append("</param>");                sb.Append("</params>");                sb.Append("</methodCall>");
+                sb.Append("<?xml version=\"1.0\"?>");
+                sb.Append("<methodCall>");
+                sb.Append("<methodName>weblogUpdates.ping</methodName>");
+                sb.Append("<params>");
+                sb.Append("<param>");
+                sb.Append("<value><string>" + url + "</string></value>");
+                sb.Append("</param><param><value><string>" + url + "</string></value>");
+                sb.Append("</param>");
+                sb.Append("</params>");
+                sb.Append("</methodCall>");
+
                 HttpHelper http = new HttpHelper();
                 HttpItem item = new HttpItem()
                 {
@@ -69,12 +76,25 @@ namespace aitipachong.SEO
         /// <returns></returns>
         public static bool OriginalPingBaidu(string curl, string token = "TzIJxrHBBTH9VdsX")
         {
-            string url = string.Format("http://data.zz.baidu.com/urls?site={0}&token={1}", new Uri(curl).Host, token);            HttpHelper http = new HttpHelper();            HttpItem item = new HttpItem()            {                URL = url,                                  //URL       必需项
+            string url = string.Format("http://data.zz.baidu.com/urls?site={0}&token={1}", new Uri(curl).Host, token);
+            HttpHelper http = new HttpHelper();
+            HttpItem item = new HttpItem()
+            {
+                URL = url,                                  //URL       必需项
                 Method = "POST",                            //URL       可选项 默认为Get
                 Referer = curl,                             //来源URL   可选项
                 Postdata = curl,                            //Post数据  可选项GET时不需要写
-                ProtocolVersion = HttpVersion.Version10,                ContentType = "text/plain",                UserAgent = "curl/7.12.1"            };            HttpResult result = http.GetHtml(item);            if (result.Html.Contains("\"success\":1"))            {                return true;            }
+                ProtocolVersion = HttpVersion.Version10,
+                ContentType = "text/plain",
+                UserAgent = "curl/7.12.1"
+            };
+            HttpResult result = http.GetHtml(item);
+            if (result.Html.Contains("\"success\":1"))
+            {
+                return true;
+            }
 
-            return false;        }
+            return false;
+        }
     }
 }
